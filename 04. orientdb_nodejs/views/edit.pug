@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        h1
+            a(href='/topic') Server Side JavaScript
+        ul
+            each topic in topics
+                li 
+                    - rid = encodeURIComponent(topic['@rid']);
+                    a(href=`/topic/${rid}`)= topic['title']
+        article
+            - thisRid = encodeURIComponent(topic[0]['@rid']);
+            form(action=`/topic/${thisRid}/edit`, method=`post`)
+                input(type=`text`, name=`title`, placeholder=`title`, value=`${topic[0].title}`)
+                p
+                textarea(name=`desc`)= topic[0].desc
+                p
+                input(type=`submit`)

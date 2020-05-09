@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        h1 
+            a(href=`/topic`) Server Side JavaScript
+        //- pug 반복문 문법(https://pugjs.org/language/iteration.html)
+        ul
+            each _val, _index in _files 
+                li
+                    a(href=`/topic/${_val}`) 
+                        = _val
+
+            //- -for(i=0; i<_files.length; i++) //자바스크립트
+            //-     li 
+            //-         a(href=`/topic/${_files[i]}`)
+            //-             =_files[i]
+
+        if _file
+            h1= _file
+            p= _desc
+
+        a(href=`/topic/new`) new
+
+
+        
+        

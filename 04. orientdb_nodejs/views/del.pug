@@ -1,0 +1,18 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        h1
+            a(href='/topic') Server Side JavaScript
+        ul
+            each topic in topics
+                li 
+                    - rid = encodeURIComponent(topic['@rid']);
+                    a(href=`/topic/${rid}`)= topic['title']
+        article
+            h2= `${topic[0].title} 삭제하시겠습니까?`
+            - thisRid = encodeURIComponent(topic[0]['@rid']);
+            form(action=`/topic/${thisRid}/del`, method=`post`)
+                input(type=`submit` value=`YES`)
+                input(type=`button` value=`NO` onclick=`location.href = '/topic/${thisRid}'`)

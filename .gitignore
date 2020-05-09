@@ -1,0 +1,5 @@
+.vscode/settings.json
+01. server_side_javascript/node_modules/*
+02. express_nodejs/node_modules/*
+03. express_webapps/node_modules/*
+04. orientdb_nodejs/node_modules/*

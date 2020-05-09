@@ -1,0 +1,20 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+    body
+        h1 
+            a(href=`/topic`) Server Side JavaScript
+        //-pug 반복문 문법(https://pugjs.org/language/iteration.html)
+        ul
+            each _val, _index in _files 
+                li
+                    a(href=`/topic/${_val}`) 
+                        = _val
+        form(action="/topic", method='post')
+            p
+            input(type='text', name='title', placeholder="title")
+            p
+            textarea(name="desc")
+            p
+            input(type='submit')
